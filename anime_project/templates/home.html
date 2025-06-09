@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="swiper">
+    <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="{% static 'Images/image1.jpg' %}" alt="Anime 1">
+                </div>
+                <div class="swiper-slide">
+                    <img src="{% static 'Images/image2.jpg' %}" alt="Anime 2">
+                </div>
+                <div class="swiper-slide">
+                    <img src="{% static 'Images/image3.jpg' %}" alt="Anime 3">
+                </div>
+                <div class="swiper-slide">
+                    <img src="{% static 'Images/image4.jpg' %}" alt="Anime 4">
+                </div>
+                <div class="swiper-slide">
+                    <img src="{% static 'Images/image6.jpg' %}" alt="Anime 6">
+                </div>
+                <div class="swiper-slide">
+                    <img src="{% static 'Images/image18.jpg' %}" alt="Anime 18">
+                </div>
+                <div class="swiper-slide">
+                    <img src="{% static 'Images/image5.jpg' %}" alt="Anime 5">
+                </div>
+                <div class="swiper-slide">
+                    <img src="{% static 'Images/image7.jpg' %}" alt="Anime 7">
+                </div>
+                <div class="swiper-slide">
+                    <img src="{% static 'Images/image8.jpg' %}" alt="Anime 8">
+                </div>
+                <div class="swiper-slide">
+                    <img src="{% static 'Images/image9.png' %}" alt="Anime 9">
+                </div>
+                <div class="swiper-slide">
+                    <img src="{% static 'Images/image10.jpg' %}" alt="Anime 10">
+                </div>
+                <div class="swiper-slide">
+                    <img src="{% static 'Images/image11.jpg' %}" alt="Anime 11">
+                </div>
+                <div class="swiper-slide">
+                    <img src="{% static 'Images/image13.jpg' %}" alt="Anime 13">
+                </div>
+                <div class="swiper-slide">
+                    <img src="{% static 'Images/image14.jpg' %}" alt="Anime 14">
+                </div>
+                <div class="swiper-slide">
+                    <img src="{% static 'Images/image15.png' %}" alt="Anime 15">
+                </div>
+                <div class="swiper-slide">
+                    <img src="{% static 'Images/image16.jpg' %}" alt="Anime 16">
+                </div>
+                <div class="swiper-slide">
+                    <img src="{% static 'Images/image17.jpg' %}" alt="Anime 17">
+                </div>
+                <div class="swiper-slide">
+                    <img src="{% static 'Images/image12.jpg' %}" alt="Anime 12">
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>        </div>
+</div>
+
+<section class="heading-top">
+    <h1>Top Airing</h1>
+</section>
+<main>
+    <div class="wrapper"></div>
+</main>
+{% endblock content %}
+
+{% block homestyle %}border: 1px solid var(--selected-button){% endblock homestyle %}
+
+{% block javascript %}
+<script src="{% static 'javascript/home.js' %}"></script>
+{% endblock javascript %}

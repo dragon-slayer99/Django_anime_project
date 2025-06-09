@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/desc.css' %}">
+    {% block stylesheet %}{% endblock stylesheet %}
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h1>Anime<span>Hub</span></h1>
+        </div>
+
+        <div class="search-container">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search anime..." id="searchBox" autofocus>
+                <button class="search-btn" >Search</button>
+            </div>
+        </div>
+
+        <div class="nav-buttons">
+            <button class="theme-toggle-btn" id="themeToggle">
+                <i class="fas fa-sun"></i>
+                <span>Theme</span>
+            </button>
+
+
+            <a href="{% url "home" %}"> <button class="home-btn" style="{% block homestyle %}{% endblock homestyle %}">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Home</span>
+            </button></a> 
+
+            <a href="{% url "favourites" %}"> <button class="favorites-btn"
+                    style="{% block favoritesstyle %}{% endblock favoritesstyle %}">
+                    <i class="fas fa-heart"></i>
+                    <span>Favorites</span>
+            </button></a>
+
+            <a href="{% url "logout" %}"> <button class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+            </button></a>
+        </div>
+    </header>
+    {% block content %}
+
+    {% endblock content %}
+
+    <!-- core script of base.html -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="{% static 'javascript/base.js' %}"></script>
+
+    <!-- page specific -->
+    {% block javascript %}{% endblock javascript %}
+</body>
+
+</html>

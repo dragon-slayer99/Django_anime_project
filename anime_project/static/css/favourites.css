@@ -1,0 +1,109 @@
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    width: 100%;
+    max-width: 250px;
+    aspect-ratio: 0.7;
+    border: 1px solid var(--card-border);
+    padding: 8px;
+    border-radius: 10px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--card-bg);
+
+    img {
+        width: 100%;
+        height: calc(100% - 80px);
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .card-info {
+        height: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        padding: 8px 0;
+
+        .title-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            gap: 8px;
+        }
+
+        h2 {
+            flex: 1;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: var(--text-color);
+        }
+
+        .favorite-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+            color: #666;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: #ff4757;
+            }
+
+            &.active {
+                color: #ff4757;
+            }
+        }
+
+        span {
+            font-size: 1rem;
+            color: var(--episode-color);
+            display: flex;
+            margin: 10px 3px 3px 3px;
+            align-items: center;
+
+            i {
+                font-size: 1rem;
+                margin-right: 5px;
+            }
+        }
+    }
+
+}
+
+.card:hover {
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.7s ease;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid #FCF259;
+}
+
+.card:hover img {
+    filter: blur(5px);
+}

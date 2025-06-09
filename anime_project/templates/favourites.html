@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<section class="heading-top">
+    
+</section>
+<main>
+    <div class="wrapper"></div>
+</main>
+
+{% endblock content %}
+
+{% block favoritesstyle %}border: 1px solid var(--selected-button){% endblock favoritesstyle %}
+
+{% block javascript %}
+
+<script src="{% static 'javascript/favourites.js' %}"></script>
+
+{% endblock javascript %}

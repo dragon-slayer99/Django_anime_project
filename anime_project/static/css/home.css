@@ -1,0 +1,237 @@
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+    /* Add spacing between swiper and content */
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    width: 100%;
+    max-width: 250px;
+    aspect-ratio: 0.7;
+    border: 1px solid var(--card-border);
+    padding: 8px;
+    border-radius: 10px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--card-bg);
+
+    img {
+        width: 100%;
+        height: calc(100% - 80px);
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .card-info {
+        height: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        padding: 8px 0;
+
+        .title-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            gap: 8px;
+        }
+
+        h2 {
+            flex: 1;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: var(--text-color);
+        }
+
+        .favorite-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+            color: #666;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: #ff4757;
+            }
+
+            &.active {
+                color: #b31a26;
+            }
+        }
+
+        span {
+            font-size: 1rem;
+            color: var(--episode-color);
+            display: flex;
+            margin: 10px 3px 3px 3px;
+            align-items: center;
+
+            i {
+                font-size: 1rem;
+                margin-right: 5px;
+            }
+        }
+    }
+
+}
+
+.card:hover {
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.7s ease;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--hover-card-border);
+}
+
+.card:hover img {
+    filter: blur(5px);
+}
+
+/* swiper styles */
+.swiper {
+    width: 100%;
+    height: 85vh;
+    /* Increased height to 85% of viewport height */
+    margin-top: 60px;
+    display: block;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: white;
+    /* background-color: rgba(0, 0, 0, 0.3); */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.swiper-pagination-bullet {
+    background: white;
+}
+
+/* Heading top styles */
+.heading-top {
+    margin: 20px 0;
+    display: flex;
+    justify-content: start;
+    width: 100vw;
+    margin-left: 100px;
+    margin-bottom: 0px;
+
+}
+
+
+
+.heading-top h1::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 60px;
+    height: 3px;
+    /* background-color: var(--selected-button); */
+}
+
+@media (max-width: 768px) {
+    .heading-top {
+        margin: 15px;
+        font-size: 1.5rem;
+    }
+}
+
+/* New container styles */
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 70px);
+}
+
+.hero-section {
+    width: 100%;
+    background-color: var(--card-bg);
+}
+
+.content-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .wrapper {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .wrapper {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .swiper {
+        height: 400px;
+    }
+
+    .heading-top {
+        padding: 15px 20px;
+        font-size: 1.5rem;
+    }
+
+    .page-container {
+        min-height: calc(100vh - 60px);
+    }
+
+    .content-section {
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .swiper {
+        height: 300px;
+    }
+}

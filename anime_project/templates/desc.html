@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="description-page">
+    <div class="descriptionCard">
+        <div class="description-card">
+            <img src="{{image}}" alt="{{title}} image" id="animeImage">
+        </div>
+        <div class="content-wrapper">
+            <div class="watchLinks">
+                <button><i class="fas fa-play"></i>Watch Now</button>
+                <button><i class="fas fa-download"></i>Download</button>
+                <button><i class="fas fa-heart"></i>Add to List</button>
+            </div>
+            <div class="synopsis">
+                <h3>Synopsis</h3>
+                <p id="synopsisPara">{{synopsis}}</p>
+            </div>
+            <div class="animeInfo">
+                <div id="episodesInfo"></div>
+                <div id="episodeDuration"></div>
+                <div class="genre"></div>
+                <div id="animeRating"></div>
+                <div id="japaneseName"></div>
+                <div class="status"></div>
+            </div>
+        </div>
+    </div>
+</div>  
+
+    {% endblock content %}
+
+    {% block javascript %}
+
+    <script src="{% static 'javascript/desc.js' %}"></script>
+
+    {% endblock javascript %}
